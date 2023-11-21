@@ -25,9 +25,10 @@ jobs:
       - run: npm run report:merge
       - run: npm run report:mocha
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.7
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: cypress/reports/mochareports/html
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: cypress/reports/mochareports/html
