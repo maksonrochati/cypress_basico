@@ -8,7 +8,7 @@
     "cy:run": "npx cypress run",
     "report:clean": "rimraf kdir cypress\\reports && mkdir cypress\\reports\\mocha && mkdir cypress\\reports\\mochareports && mkdir cypress\\reports\\mochareports\\html",
     "pretest": "npm run report:clean",
-    "report:merge": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/index.json",
+    "report:merge": "mochawesome-merge cypress/reports/mocha/*.json -o cypress/reports/mochareports/index.json",
     "report:mocha": "marge cypress/reports/mochareports/index.json -f index -o cypress/reports/mochareports\\html",
     "postest": "npm run combine-reports && npm run generate-report"
   },
