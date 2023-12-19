@@ -21,21 +21,23 @@ jobs:
         with:
           node-version: 14.x
 
-      - run: npm install
-      - run: npm run pretest
-      - run: npm run cy:run
-        continue-on-error: true
+        # - run: npm install
+        # - run: npm run pretest
+        # - run: npm run cy:run
+        #   continue-on-error: true
 
-      - run: npm run report:merge
-      - run: npm run report:mocha
+        # - run: npm run report:merge
+        # - run: npm run report:mocha
 
+      - name: Run split Cypress tests 🧪
+        uses: cypress-io/github-action@v5
         env:
           SPLIT: ${{ strategy.job-total }}
           SPLIT_INDEX: ${{ strategy.job-index }}
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.7
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: cypress/reports/mochareports/html
+      # - name: Deploy to GitHub Pages
+      #   uses: JamesIves/github-pages-deploy-action@4.1.7
+      #   with:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     BRANCH: gh-pages
+      #     FOLDER: cypress/reports/mochareports/html
