@@ -31,6 +31,3 @@ import "cypress-file-upload";
 require("cypress-xpath");
 export const faker = require("generate-datafaker");
 import "cypress-wait-until";
-
-require("cypress-dark/src/halloween");
-require("cypress-dark/src/utils");

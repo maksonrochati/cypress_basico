@@ -26,7 +26,6 @@
     "@shelex/cypress-allure-plugin": "^2.40.0",
     "cypress": "^13.5.1",
     "cypress-action": "^1.0.13",
-    "cypress-dark": "^1.8.3",
     "cypress-mochawesome-reporter": "^3.7.0",
     "cypress-multi-reporters": "^1.6.4",
     "cypress-split": "^1.17.1",
