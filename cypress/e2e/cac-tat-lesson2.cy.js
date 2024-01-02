@@ -41,9 +41,9 @@ describe("Central de Atendimento ao Cliente TAT", function () {
   it("campo telefone continua vazio quando preenchido com valor não numérico", () => {
     cy.step("Teste de step").get("#phone").type("abc").should("have.value", "");
 
-    cy.action({ attr: "id=phone", text: "action por atributo CSS" })
-      .type("abc")
-      .should("have.value", "");
+    // cy.action({ attr: "id=phone", text: "action por atributo CSS" })
+    //   .type("abc")
+    //   .should("have.value", "");
   });
 
   // Exercicio 5

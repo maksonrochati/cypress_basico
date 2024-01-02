@@ -84,6 +84,14 @@
      "Given('', function () {}, {});});"],
     "description": "generate full test"
   },
+   "generate test describes its": {
+    "scope": "javascript,typescript",
+    "prefix": "test_des_its",
+    "body": ["import {describes, its,faker} from '../support/e2e'; ",
+    "describes('', function () {",
+     "its('', function () {}, {});});"],
+    "description": "generate full test describes its"
+  },
    "generate test action": {
     "scope": "javascript,typescript",
     "prefix": "test_action",
@@ -99,7 +107,7 @@
     "prefix": "test_bdd_BR",
     "body": ["import {Dado, Cenario, faker, Quando,E, Entao} from '../support/e2e'; ",
      "Cenario('$1', function () {",
-     "before(() => {cy.visit(""); })"
+     "before(() => {cy.visit(''); })",
     "Dado('$2', function () {}, {});",
     "Quando('$3', function () {}, {});",
     "E('$4', function () {}, {});",
@@ -108,4 +116,13 @@
     ],
     "description": "generate full test"
   }
+,
+  "generate elseIf": {
+    "scope": "javascript,typescript",
+    "prefix": "elseIf",
+    "body": ["cy.elseIf('ex: input[name='name']').type('test', {force: true})", "$2"],
+    "description": "generate elseIf"
+  }
+
+
 }
