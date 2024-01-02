@@ -16,6 +16,6 @@ Execute `npm install` (ou `npm i` para a versão curta) para instalar as depend�
 
 ## Testes
 
-Execute `npm test` (ou `npm t` para a versão curta) para executar os testes no modo headless.
+Execute `npm cy:run` para executar os testes no modo headless.
 
 Ou execute `npm run cy:open` para abrir o aplicativo Cypress e executar os testes em modo interativo.
